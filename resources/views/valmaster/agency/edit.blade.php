@@ -723,7 +723,7 @@
                                                          class="block mt-1 w-full"
                                                          type="text"
                                                          name="name_of_new_owner_tenant"
-                                                         :value="{{$agency->name_of_new_owner_tenant}}" required autofocus/>
+                                                         value="{{$agency->name_of_new_owner_tenant}}" required autofocus/>
                                             </div>
 
                                             {{-- PHONE NUMBER--}}
@@ -734,7 +734,7 @@
                                                          class="block mt-1 w-full"
                                                          type="text"
                                                          name="phone_number"
-                                                         :value="{{$agency->phone_number}}" required autofocus/>
+                                                         value="{{$agency->phone_number}}" required autofocus/>
                                             </div>
                                         </div>
                                 </div>
@@ -754,7 +754,7 @@
                                                          class="block mt-1 w-full"
                                                          type="email"
                                                          name="email_address"
-                                                         :value="{{$agency->email_address}}" required autofocus/>
+                                                         value="{{$agency->email_address}}" required autofocus/>
                                             </div>
 
                                             <!-- SALE DATE/LEASE START DATE-->
@@ -766,7 +766,7 @@
                                                          class="block mt-1 w-full"
                                                          type="date"
                                                          name="sale_date_lease_start_date"
-                                                         :value="{{$agency->sale_date_lease_start_date}}" required autofocus />
+                                                         value="{{$agency->sale_date_lease_start_date}}" required autofocus/>
                                             </div>
                                         </div>
                                     </div>
