@@ -13821,7 +13821,6 @@ Ensure the default browser behavior of the `hidden` attribute.
                 <p class="font-mono">{{$agency->sale_date_lease_start_date}}</p>
             </div>
 
-
         </div>
     </body>
 </html>
