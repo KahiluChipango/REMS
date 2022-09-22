@@ -13790,6 +13790,38 @@ Ensure the default browser behavior of the `hidden` attribute.
             <p class="font-mono">K{{$agency->sale_price_market_value_k}}</p>
             <p class="font-mono">${{$agency->sale_price_market_value_usd}}</p>
         </div>
-    </div>
+
+            <div class="col-span-1 border-b-2">
+                <h1 class="underline font-bold text-uppercase font-serif">STATUS</h1>
+                <p class="font-mono">{{$agency->status}}</p>
+            </div>
+
+            <div class="col-span-1 border-b-2">
+                <h1 class="underline font-bold text-uppercase font-serif">SOLD/LET</h1>
+                <p class="font-mono">{{$agency->sold_let}}</p>
+            </div>
+
+            <div class="col-span-1 border-b-2">
+                <h1 class="underline font-bold text-uppercase font-serif">NAME OF NEW OWNER/TENANT</h1>
+                <p class="font-mono">{{$agency->name_of_new_owner_tenant}}</p>
+            </div>
+
+            <div class="col-span-1 border-b-2">
+                <h1 class="underline font-bold text-uppercase font-serif">PHONE NUMBER</h1>
+                <p class="font-mono">{{$agency->phone_number}}</p>
+            </div>
+
+            <div class="col-span-1 border-b-2">
+                <h1 class="underline font-bold text-uppercase font-serif">EMAIL ADDRESS</h1>
+                <p class="font-mono">{{$agency->email_address}}</p>
+            </div>
+
+            <div class="col-span-1 border-b-2">
+                <h1 class="underline font-bold text-uppercase font-serif">SALE DATE/LEASE START DATE</h1>
+                <p class="font-mono">{{$agency->sale_date_lease_start_date}}</p>
+            </div>
+
+
+        </div>
     </body>
 </html>
