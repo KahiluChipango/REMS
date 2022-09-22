@@ -61,6 +61,12 @@ class AgencyController extends Controller
                 ->orWhere('rent_price_usd', 'LIKE', '%'.$search.'%')
                 ->orWhere('rent_price_usd', 'LIKE', '%'.$search.'%')
                 ->orWhere('sale_price_market_value_usd', 'LIKE', '%'.$search.'%')
+                ->orWhere('status', 'LIKE', '%'.$search.'%')
+                ->orWhere('sold_let', 'LIKE', '%'.$search.'%')
+                ->orWhere('name_of_new_owner_tenant', 'LIKE', '%'.$search.'%')
+                ->orWhere('phone_number', 'LIKE', '%'.$search.'%')
+                ->orWhere('email_address', 'LIKE', '%'.$search.'%')
+                ->orWhere('sale_date_lease_start_date', 'LIKE', '%'.$search.'%')
                 ->paginate(20);
 
         } else {
@@ -135,7 +141,13 @@ class AgencyController extends Controller
            'rent_price_k' => ['required'],
            'rent_price_usd' => ['required'],
            'sale_price_market_value_k' => ['required'],
-           'sale_price_market_value_usd' => ['required']
+           'sale_price_market_value_usd' => ['required'],
+           'status' => ['required'],
+           'sold_let' => ['required'],
+           'name_of_new_owner_tenant' => ['required'],
+           'phone_number' => ['required'],
+           'email_address' => ['required'],
+           'sale_date_lease_start_date' => ['required'],
        ]);
 
        /*dd($request->all());*/
@@ -255,6 +267,12 @@ class AgencyController extends Controller
                 ->Where('rent_price_usd', 'LIKE', '%'.$request['rent_price_usd'].'%')
                 ->Where('rent_price_usd', 'LIKE', '%'.$request['rent_price_usd'].'%')
                 ->Where('sale_price_market_value_usd', 'LIKE', '%'.$request['sale_price_market_value_usd'].'%')
+                ->Where('status', 'LIKE', '%'.$request['status'].'%')
+                ->Where('sold_let', 'LIKE', '%'.$request['sold_let'].'%')
+                ->Where('name_of_new_owner_tenant', 'LIKE', '%'.$request['name_of_new_owner_tenant'].'%')
+                ->Where('phone_number', 'LIKE', '%'.$request['phone_number'].'%')
+                ->Where('email_address', 'LIKE', '%'.$request['email_address'].'%')
+                ->Where('sale_date_lease_start_date', 'LIKE', '%'.$request['sale_date_lease_start_date'].'%')
                 ->paginate(20);
 
         } else {

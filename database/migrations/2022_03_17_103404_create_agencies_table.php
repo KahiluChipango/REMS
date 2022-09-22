@@ -43,22 +43,29 @@ class CreateAgenciesTable extends Migration
             $table->enum('gym', ['N/A', 'YES', 'NO']);
             $table->enum('guard_house', ['N/A', 'YES', 'NO']);
             $table->enum('workers_quarters', ['N/A', 'YES', 'NO']);
-            $table->enum('garage', ['N/A', 'YES', 'NO']);
+            $table->enum('garage', ['N/A', 'YES', 'NO', 'LOCKABLE', 'CARPORT', 'BOTH']);
             $table->enum('layout_of_office_space', ['N/A', 'PARTIONED', 'OPEN SPACE']);
             $table->enum('parking', ['N/A', 'PLENTY', 'MODERATE', 'LITTLE', 'NO PARKING']);
             $table->enum('pets', ['N/A', 'PET FRIENDLY', 'NO PETS']);
-            $table->enum('electricity', ['N/A', 'BACKUP POWER', 'NO BACKUP POWER']);
+            $table->enum('electricity', ['N/A', 'BACKUP POWER', 'NO BACKUP POWER', 'ZESCO', 'BOTH']);
             $table->enum('water', ['N/A', 'BOREHOLE', 'COUNCIL WATER', 'WELL', 'COMMUNAL WATER', 'NO WATER' ]);
             $table->enum('surroundings', ['N/A', 'GARDENS', 'PRIVATE BACKYARD', 'NO BACKYARD']);
             $table->enum('recreational_facilities', ['N/A', 'NEARBY SOCIAL AMENITIES', 'NO NEARBY SOCIAL AMENITIES' ]);
             $table->enum('shopping', ['N/A', 'SHOPPING MALL', 'SHOPPING CENTRE', 'STAND ALONE SHOP']);
             $table->enum('schools', ['N/A', 'SCHOOL', 'NO SCHOOL']);
             $table->enum('nearby_offices', ['N/A', 'OFFICE BUILDINGS', 'NO OFFICE BUILDINGS']);
-            $table->enum('transport', ['N/A', 'BUS STATION', 'NO BUS STATION', 'TAXI RANK', 'NO TAXI RANK']);
+            $table->enum('transport', ['N/A', 'BUS STATION', 'NO BUS STATION', 'TAXI RANK', 'NO TAXI RANK', 'BOTH']);
             $table->string('rent_price_k');
             $table->string('rent_price_usd');
             $table->string('sale_price_market_value_k');
             $table->string('sale_price_market_value_usd');
+            $table->enum('status', ['AVAILABLE', 'LET', 'OFFER PENDING', 'SOLD']);
+            $table->enum('sold_let', ['N/A', 'YES', 'NO']);
+            $table->string('name_of_new_owner_tenant');
+            $table->string('phone_number');
+            $table->string('email_address');
+            $table->date('sale_date_lease_start_date');
+
 
             $table->timestamps();
         });

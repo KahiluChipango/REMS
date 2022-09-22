@@ -450,6 +450,9 @@
                                                 <option value="N/A">N/A</option>
                                                 <option value="YES">YES</option>
                                                 <option value="NO">NO</option>
+                                                <option value="LOCKABLE">LOCKABLE</option>
+                                                <option value="CARPORT">CARPORT</option>
+                                                <option value="BOTH">BOTH</option>
                                             </select>
                                         </div>
 
@@ -512,6 +515,8 @@
                                                 <option value="N/A">N/A</option>
                                                 <option value="BACKUP POWER">BACKUP POWER</option>
                                                 <option value="NO BACKUP POWER">NO BACKUP POWER</option>
+                                                <option value="ZESCO">ZESCO</option>
+                                                <option value="BOTH">BOTH</option>
                                             </select>
                                         </div>
 
@@ -616,6 +621,7 @@
                                                 <option value="NO BUS STATION">NO BUS STATION</option>
                                                 <option value="TAXI RANK">TAXI RANK</option>
                                                 <option value="NO TAXI RANK">NO TAXI RANK</option>
+                                                <option value="BOTH">BOTH</option>
                                             </select>
                                         </div>
 
@@ -670,6 +676,95 @@
                                                      type="number"
                                                      name="sale_price_market_value_usd"
                                                      :value="old('sale_price_market_value_usd')" required autofocus />
+                                        </div>
+                                        <div>
+                                            <!-- STATUS-->
+                                            <x-label for="status"
+                                                     :value="__('STATUS')" />
+                                            <select id="status"
+                                                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"
+                                                    type="text"
+                                                    name="status">
+                                                <option value=""></option>
+                                                <option value="N/A">N/A</option>
+                                                <option value="AVAILABLE">AVAILABLE</option>
+                                                <option value="LET">LET</option>
+                                                <option value="OFFER PENDING">OFFER PENDING</option>
+                                                <option value="SOLD">SOLD</option>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <!-- SOLD LET-->
+                                            <x-label for="sold_let"
+                                                     :value="__('SOLD/LET')" />
+                                            <select id="sold_let"
+                                                    class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"
+                                                    type="text"
+                                                    name="sold_let">
+                                                <option value=""></option>
+                                                <option value="N/A">N/A</option>
+                                                <option value="YES">YES</option>
+                                                <option value="NO">NO</option>
+                                            </select>
+                                        </div>
+
+                                        {{-- NAME OF NEW OWNER--}}
+                                        <div>
+                                            <x-label for="name_of_new_owner_tenant"
+                                                     :value="__('NAME OF NEW OWNER')" />
+
+                                            <x-input id="name_of_new_owner_tenant"
+                                                     class="block mt-1 w-full"
+                                                     type="text"
+                                                     name="name_of_new_owner_tenant"
+                                                     :value="old('name_of_new_owner_tenant')" required autofocus/>
+                                        </div>
+
+                                        {{-- PHONE NUMBER--}}
+                                        <div>
+                                            <x-label for="phone_number"
+                                                     :value="__('PHONE NUMBER')" />
+                                            <x-input id="phone_number"
+                                                     class="block mt-1 w-full"
+                                                     type="text"
+                                                     name="phone_number"
+                                                     :value="old('phone_number')" required autofocus/>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                                {{--OWNER EMAIL AND SALEDATE/ LEASE START DATE--}}
+
+                                <div class="pt-8">
+                                    <div class="grid grid-cols-4 gap-sm-2">
+
+                                        <!-- Email ADDRESS-->
+                                        <div>
+                                            <x-label for="email_address"
+                                                     :value="__('EMAIL ADDRESS')" />
+
+                                            <x-input id="email_address"
+                                                     class="block mt-1 w-full"
+                                                     type="email"
+                                                     name="email_address"
+                                                     :value="old('email_address')" required autofocus/>
+                                        </div>
+
+                                        <!-- SALE DATE/LEASE START DATE-->
+                                        <div>
+                                            <x-label for="sale_date_lease_start_date"
+                                                     :value="__('SALE DATE/LEASE START DATE')" />
+
+                                            <x-input id="sale_date_lease_start_date"
+                                                     class="block mt-1 w-full"
+                                                     type="date"
+                                                     name="sale_date_lease_start_date"
+                                                     :value="old('sale_date_lease_start_date')" required autofocus />
                                         </div>
                                     </div>
                                 </div>

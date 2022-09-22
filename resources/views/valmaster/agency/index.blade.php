@@ -92,6 +92,12 @@
                             <x-table.header>Rent Price $</x-table.header>
                             <x-table.header>Sale Price/Market Value K</x-table.header>
                             <x-table.header>Sale Price/Market Value $</x-table.header>
+                            <x-table.header>Status</x-table.header>
+                            <x-table.header>Sold/Let</x-table.header>
+                            <x-table.header>Name of New Owner/Tenant</x-table.header>
+                            <x-table.header>Phone Number</x-table.header>
+                            <x-table.header>Email Address</x-table.header>
+                            <x-table.header>Sale Date/Lease Start Date</x-table.header>
                             <x-table.header>Action</x-table.header>
                         </x-slot>
                         <?php $i = 0?>
@@ -142,6 +148,12 @@
                                 <x-table.column>${{$agency->rent_price_usd}}</x-table.column>
                                 <x-table.column>K{{$agency->sale_price_market_value_k}}</x-table.column>
                                 <x-table.column>${{$agency->sale_price_market_value_usd}}</x-table.column>
+                                <x-table.column>{{$agency->status}}</x-table.column>
+                                <x-table.column>{{$agency->sold_le}}</x-table.column>
+                                <x-table.column>{{$agency->name_of_new_owner_tenant}}</x-table.column>
+                                <x-table.column>{{$agency->phone_number}}</x-table.column>
+                                <x-table.column>{{$agency->email_address}}</x-table.column>
+                                <x-table.column>{{$agency->sale_date_lease_start_date}}</x-table.column>
                                 <x-table.column>
                                     {{--Edit Button--}}
                                     <a class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500"

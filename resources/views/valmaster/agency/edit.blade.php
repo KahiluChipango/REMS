@@ -229,8 +229,6 @@
                                                       <option value="BLOCK OF APARTMENTS" {{$agency->type_of_building_2 == "BLOCK OF APARTMENTS" ? 'selected': ''}}>BLOCK OF APARTMENTS</option>
                                                       <option value="COMPLEX OF HOUSES" {{$agency->type_of_building_2 == "COMPLEX OF HOUSES" ? 'selected': ''}}>COMPLEX OF HOUSES</option>
                                               </select>
-
-
                                           </div>
 
 
@@ -458,6 +456,9 @@
                                                         name="garage">
                                                     <option value="YES" {{$agency->garage == "YES" ? 'selected': ''}}>YES</option>
                                                     <option value="NO" {{$agency->garage == "NO" ? 'selected': ''}}>NO</option>
+                                                    <option value="LOCKABLE" {{$agency->garage == "LOCKABLE" ? 'selected': ''}}>LOCKABLE</option>
+                                                    <option value="CARPORT" {{$agency->garage == "CARPORT" ? 'selected': ''}}>CARPORT</option>
+                                                    <option value="BOTH" {{$agency->garage == "BOTH" ? 'selected': ''}}>BOTH</option>
                                                 </select>
                                             </div>
                                             <!-- LAYOUT OF OFFICE SPACE -->
@@ -520,6 +521,8 @@
                                                     <option value="N/A" {{$agency->electricity == "N/A" ? 'selected': ''}}>N/A</option>
                                                     <option value="BACKUP POWER" {{$agency->electricity == "BACKUP POWER" ? 'selected': ''}}>BACKUP POWER</option>
                                                     <option value="NO BACKUP POWER" {{$agency->electricity == "NO BACKUP POWER" ? 'selected': ''}}>NO BACKUP POWER</option>
+                                                    <option value="ZESCO" {{$agency->electricity == "ZESCO" ? 'selected': ''}}>ZESCO</option>
+                                                    <option value="BOTH" {{$agency->electricity == "BOTH" ? 'selected': ''}}>BOTH</option>
                                                 </select>
                                             </div>
 
@@ -624,6 +627,7 @@
                                                     <option value="NO BUS STATION" {{$agency->surroundings_facilities_5 == "NO BUS STATION" ? 'selected': ''}}>NO BUS STATION</option>
                                                     <option value="TAXI RANK" {{$agency->surroundings_facilities_5 == "TAXI RANK" ? 'selected': ''}}>TAXI RANK</option>
                                                     <option value="NO TAXI RANK" {{$agency->surroundings_facilities_5 == "NO TAXI RANK" ? 'selected': ''}}>NO TAXI RANK</option>
+                                                    <option value="BOTH" {{$agency->surroundings_facilities_5 == "BOTH" ? 'selected': ''}}>BOTH</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -679,8 +683,93 @@
                                                          name="sale_price_market_value_usd"
                                                          value="{{$agency->sale_price_market_value_usd}}" required autofocus />
                                             </div>
-                                    </div>
+
+                                            <div>
+                                                <!-- STATUS-->
+                                                <x-label for="status"
+                                                         :value="__('STATUS')" />
+                                                <select id="status"
+                                                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"
+                                                        type="text"
+                                                        name="status">
+                                                    <option value="N/A" {{$agency->status == "N/A" ? 'selected': ''}}>N/A</option>
+                                                    <option value="AVAILABLE" {{$agency->status == "AVAILABLE" ? 'selected': ''}}>AVAILABLE</option>
+                                                    <option value="LET" {{$agency->status == "LET" ? 'selected': ''}}>LET</option>
+                                                    <option value="OFFER PENDING" {{$agency->status == "OFFER PENDING" ? 'selected': ''}}>OFFER PENDING</option>
+                                                    <option value="SOLD" {{$agency->status == "SOLD" ? 'selected': ''}}>SOLD</option>
+                                                </select>
+                                            </div>
+
+                                            <div>
+                                                <!-- SOLD LET-->
+                                                <x-label for="sold_let"
+                                                         :value="__('SOLD/LET')" />
+                                                <select id="sold_let"
+                                                        class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full"
+                                                        type="text"
+                                                        name="sold_let">
+                                                    <option value="N/A" {{$agency->sold_let == "N/A" ? 'selected': ''}}>N/A</option>
+                                                    <option value="YES" {{$agency->sold_let == "N/A" ? 'selected': ''}}>YES</option>
+                                                    <option value="NO" {{$agency->sold_let == "N/A" ? 'selected': ''}}>NO</option>
+                                                </select>
+                                            </div>
+
+                                            {{-- NAME OF NEW OWNER--}}
+                                            <div>
+                                                <x-label for="name_of_new_owner_tenant"
+                                                         :value="__('NAME OF NEW OWNER')" />
+
+                                                <x-input id="name_of_new_owner_tenant"
+                                                         class="block mt-1 w-full"
+                                                         type="text"
+                                                         name="name_of_new_owner_tenant"
+                                                         :value="{{$agency->name_of_new_owner_tenant}}" required autofocus/>
+                                            </div>
+
+                                            {{-- PHONE NUMBER--}}
+                                            <div>
+                                                <x-label for="phone_number"
+                                                         :value="__('PHONE NUMBER')" />
+                                                <x-input id="phone_number"
+                                                         class="block mt-1 w-full"
+                                                         type="text"
+                                                         name="phone_number"
+                                                         :value="{{$agency->phone_number}}" required autofocus/>
+                                            </div>
+                                        </div>
                                 </div>
+
+
+                                    {{--OWNER EMAIL AND SALEDATE/ LEASE START DATE--}}
+
+                                    <div class="pt-8">
+                                        <div class="grid grid-cols-4 gap-sm-2">
+
+                                            <!-- Email ADDRESS-->
+                                            <div>
+                                                <x-label for="email_address"
+                                                         :value="__('EMAIL ADDRESS')" />
+
+                                                <x-input id="email_address"
+                                                         class="block mt-1 w-full"
+                                                         type="email"
+                                                         name="email_address"
+                                                         :value="{{$agency->email_address}}" required autofocus/>
+                                            </div>
+
+                                            <!-- SALE DATE/LEASE START DATE-->
+                                            <div>
+                                                <x-label for="sale_date_lease_start_date"
+                                                         :value="__('SALE DATE/LEASE START DATE')" />
+
+                                                <x-input id="sale_date_lease_start_date"
+                                                         class="block mt-1 w-full"
+                                                         type="date"
+                                                         name="sale_date_lease_start_date"
+                                                         :value="{{$agency->sale_date_lease_start_date}}" required autofocus />
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 <!-- Add Button-->
                                 <div class="flex items-center justify-end mt-4 ">

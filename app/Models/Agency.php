@@ -53,7 +53,14 @@ class Agency extends Model
         'rent_price_k',
         'rent_price_usd',
         'sale_price_market_value_k',
-        'sale_price_market_value_usd'
+        'sale_price_market_value_usd',
+        'status',
+        'sold_let',
+        'name_of_new_owner_tenant',
+        'phone_number',
+        'email_address',
+        'sale_date_lease_start_date',
+
     ];
 
 
