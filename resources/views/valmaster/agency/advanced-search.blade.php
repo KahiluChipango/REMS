@@ -509,7 +509,7 @@
                                                 <option value=""></option>
                                                 <option value="N/A">N/A</option>
                                                 <option value="PET FRIENDLY">PET FRIENDLY</option>
-                                                <option value="NO PET">NO PETS</option>
+                                                <option value="NO PETS">NO PETS</option>
                                             </select>
                                         </div>
                                     </div>

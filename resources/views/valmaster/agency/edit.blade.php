@@ -501,7 +501,7 @@
                                                     name="pets">
                                                     <option value="N/A" {{$agency->pets == "N/A" ? 'selected': ''}}>N/A</option>
                                                     <option value="PET FRIENDLY" {{$agency->pets == "PET FRIENDLY" ? 'selected': ''}}>PET FRIENDLY</option>
-                                                    <option value="NO PET" {{$agency->pets == "NO PET" ? 'selected': ''}}>NO PET</option>
+                                                    <option value="NO PETS" {{$agency->pets == "NO PETS" ? 'selected': ''}}>NO PETS</option>
                                             </select>
                                         </div>
                                     </div>
