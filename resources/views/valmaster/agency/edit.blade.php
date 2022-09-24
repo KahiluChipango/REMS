@@ -771,7 +771,17 @@
                                         </div>
                                     </div>
 
-                                <!-- Add Button-->
+
+                                    <!-- Add Button-->
+                                    <div class="flex items-center justify-start mt-4">
+
+                                        <x-button class="cursor-pointer ml-4">
+                                            {{ __('Change Photo') }}
+                                        </x-button>
+                                    </div>
+
+
+                                    <!-- Add Button-->
                                 <div class="flex items-center justify-end mt-4 ">
 
                                     <x-button class="cursor-pointer ml-4">
