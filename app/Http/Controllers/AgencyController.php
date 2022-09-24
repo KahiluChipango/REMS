@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Agency;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AgencyController extends Controller
 {
@@ -289,5 +290,21 @@ class AgencyController extends Controller
             'agency' => Agency::find($id)
         ]);
         return $pdf->download( 'Summary - '.$agency->id.'.'.$agency->job_number.'.pdf');
+    }
+
+    public function sendSummary($id){
+        $agency = Agency::find($id);
+        $pdf = PDF::loadView('valmaster.agency.receipt.summury',  [
+            'agency' => Agency::find($id),
+            'user' => auth()->user()->name
+        ]);
+
+        $data["title"] = "Sherwood Greene Properties Limited";
+
+        Mail::send('valmaster.agency.send.emails.summury',  $data, function($message)use($agency, $pdf) {
+            $message->to($agency->agency_email)
+                ->subject('Receipt')
+                ->attachData($pdf->output(), 'Receipt - '.$agency->branch.$agency->id.'.pdf');
+        });
     }
 }

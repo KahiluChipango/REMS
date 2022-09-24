@@ -13605,11 +13605,6 @@ Ensure the default browser behavior of the `hidden` attribute.
             </div>
 
             <div class="col-span-1 border-b-2">
-                <h1 class="underline font-bold text-uppercase font-serif">Status</h1>
-                <p class="font-mono">{{$agency->job_number}}</p>
-            </div>
-
-            <div class="col-span-1 border-b-2">
                 <h1 class="underline font-bold text-uppercase font-serif">Client Name</h1>
                 <p class="font-mono">{{$agency->client_name}}</p>
             </div>
